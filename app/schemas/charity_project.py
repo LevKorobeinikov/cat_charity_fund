@@ -44,7 +44,7 @@ class CharityProjectUpdate(BaseModel):
         if value is None:
             return value
         if isinstance(value, str) and not value.strip():
-            raise ValueError(f'Поле "{field.name}" не может быть пустым!')
+            raise ValueError(f"Поле '{field.name}' не может быть пустым!")
         return value
 
 

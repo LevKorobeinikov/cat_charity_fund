@@ -44,7 +44,6 @@
     ```
 5. Примените миграции и запустите проект.
     ```bach
-    alembic revision
     alembic upgrade
     uvicorn app.main:app --reload 
     ```

@@ -7,8 +7,6 @@ def invest(target: BaseModel, sources: list[BaseModel]) -> list[BaseModel]:
     updated = []
     close_date = datetime.now()
     for source in sources:
-        if source.full_amount - source.invested_amount <= 0:
-            continue
         transfer = min(
             target.full_amount - target.invested_amount,
             source.full_amount - source.invested_amount,

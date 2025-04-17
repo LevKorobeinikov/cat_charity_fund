@@ -12,5 +12,9 @@ class CharityProject(BaseModel):
     name = Column(String(MAX_LENGHT), unique=True, nullable=False)
     description = Column(Text, nullable=False)
 
-    def __str__(self) -> str:
-        return f"(ID: {self.id}, name: {self.name})"
+    def __repr__(self):
+        base_repr = super().__repr__()
+        return (
+            f"{base_repr}, "
+            f"name={self.name}, description={self.description!r})"
+        )

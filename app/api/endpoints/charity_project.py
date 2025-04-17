@@ -48,6 +48,7 @@ async def create_new_charity_project(
     new_charity_project = await charity_project_crud.create(
         obj_in=project,
         session=session,
+        commit=False,
     )
     session.add_all(
         invest(

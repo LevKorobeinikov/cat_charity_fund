@@ -21,14 +21,18 @@ class BaseModel(Base):
     __table_args__ = (
         CheckConstraint("full_amount > 0", name="check_full_amount_positive"),
         CheckConstraint(
-            "invested_amount >= 0", name="check_invested_amount_non_negative"
-        ),
-        CheckConstraint(
-            "invested_amount <= full_amount",
-            name="check_invested_amount_not_exceed_full",
+            "invested_amount >= 0 AND invested_amount <= full_amount",
+            name="check_invested_amount_range",
         ),
     )
 
-    def __str__(self):
-        return f"""{self.__class__.__name__} (ID: {self.id},
-        Full Amount: {self.full_amount})"""
+    def __repr__(self):
+        return (
+            f"{type(self).__name__}("
+            f"id={self.id}, "
+            f"full_amount={self.full_amount}, "
+            f"invested_amount={self.invested_amount}, "
+            f"fully_invested={self.fully_invested}, "
+            f"create_date={self.create_date}, "
+            f"close_date={self.close_date})"
+        )
