@@ -3,6 +3,7 @@ from fastapi import APIRouter
 from app.api.endpoints import (
     charity_project_router,
     donation_router,
+    google_api_router,
     user_router,
 )
 from app.constants import (
@@ -25,6 +26,10 @@ main_router.include_router(
     prefix=DONATION_PREFIX,
     tags=[DONATION_TAG],
 )
-
+main_router.include_router(
+    google_api_router,
+    prefix="/google",
+    tags=["Google"],
+)
 
 main_router.include_router(user_router)

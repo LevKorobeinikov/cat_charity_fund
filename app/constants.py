@@ -1,10 +1,13 @@
 CHARITY_PROJECT_PREFIX = "/charity_project"
 CHARITY_PROJECT_TAG = "Charity projects"
+COLUMNS = 3
 DONATION_PREFIX = "/donation"
 DONATION_TAG = "Donations"
 FULL_AMOUNT = 10000
+GOOGLE_PATH = "https://docs.google.com/spreadsheets/d/"
 LIFETIME_JWT = 3600
 MAX_LENGHT = 100
 MIN_LENGHT = 1
 PASSWORD_LENGHT = 3
+ROWS = 100
 USER_ID = "user.id"

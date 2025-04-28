@@ -43,6 +43,7 @@ async def create_new_donation(
         obj_in=donation,
         session=session,
         user=user,
+        commit=False,
     )
     active_projects = await charity_project_crud.get_active_objs(session)
     session.add_all(invest(new_donation, active_projects))
